@@ -3,7 +3,7 @@ pipeline {
     docker { image 'node:16-alpine' }
   }
   stages {
-    stage('SCM checkout')
+    stage('Checkout SCM')
     {
       step{
         git branch: 'main', credentialsId: 'b31d5213-6092-4d2c-8353-749a0ac63a1e', url: 'https://github.com/usingsr/Jenkins-Zero-To-Hero'
