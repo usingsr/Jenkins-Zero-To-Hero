@@ -3,13 +3,6 @@ pipeline {
     docker { image 'node:16-alpine' }
   }
   stages {
-    stage('Checkout SCM')
-    {
-      steps {
-       checkout([$class: 'GitSCM', branches: [[name: '*/main']],
-          userRemoteConfigs: [[url: 'https://github.com/usingsr/Jenkins-Zero-To-Hero', credentialsId: 'b31d5213-6092-4d2c-8353-749a0ac63a1e']]])
-      }
-    }
     stage('Test') {
       steps {
         sh 'node --version'
