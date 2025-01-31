@@ -6,7 +6,8 @@ pipeline {
     stage('Checkout SCM')
     {
       steps {
-       checkout (git branch: 'main', credentialsId: 'b31d5213-6092-4d2c-8353-749a0ac63a1e', url: 'https://github.com/usingsr/Jenkins-Zero-To-Hero')
+       checkout([$class: 'GitSCM', branches: [[name: '*/main']],
+          userRemoteConfigs: [[url: 'https://github.com/usingsr/Jenkins-Zero-To-Hero', credentialsId: 'b31d5213-6092-4d2c-8353-749a0ac63a1e']]])
       }
     }
     stage('Test') {
