@@ -9,13 +9,13 @@ pipeline
       {
         echo 'this is test phase'
       }
+	}
       stage('Deploy') 
       {
       steps 
-        {
+      {
         echo 'this is deploy phase'
       }
+     }
     }
   }
-}
-}
